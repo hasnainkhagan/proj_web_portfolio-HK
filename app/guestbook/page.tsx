@@ -14,7 +14,7 @@ import {
 } from "../components/LoadingState";
 import { unstable_noStore as noStore } from "next/cache";
 
-async function getGuestBrookEntry() {
+async function getGuestBookEntry() {
   noStore();
   const data = await prisma.guestBookEntry.findMany({
     select: {
@@ -38,13 +38,17 @@ async function getGuestBrookEntry() {
 
 export default function GuestbookPage() {
   return (
-    <section className="max-w-7xl w-full px-4 md:px-8 mx-auto">
-      <h1 className="text-4xl font-semibold lg:text-5xl pt-5">Guestbook</h1>
-      <p className="leading-7 text-muted-foreground mt-2">Sign my Guestbook!</p>
+    <section className="max-w-7xl w-full px-4 md:px-8 mx-auto uppercase">
+      <h1 className="text-4xl font-bold lg:text-5xl pt-5" align="center">
+        Guestbook
+      </h1>
+      <p className="leading-7 text-muted-foreground mt-2" align="center">
+        Sign my Guestbook !
+      </p>
 
-      <Card className="mt-10">
+      <Card className="mt-10 rounded-[2em] mb-[4em]">
         <CardHeader className="flex flex-col w-full">
-          <Label className="mb-1">Message</Label>
+          <Label className="mb-1 font-semibold">Message</Label>
           <Suspense fallback={<GuestBookFormLoading />}>
             <GuestBookForm />
           </Suspense>
@@ -61,7 +65,7 @@ export default function GuestbookPage() {
 }
 
 async function GuestBookEntries() {
-  const data = await getGuestBrookEntry();
+  const data = await getGuestBookEntry();
 
   if (data.length === 0) {
     return null;
@@ -73,12 +77,14 @@ async function GuestBookEntries() {
         <img
           src={item.User?.profileimage as string}
           alt="User Profile Image"
-          className="w-10 h-10 rounded-lg"
+          className="w-10 h-10 rounded-[.75em]"
         />
 
         <p className="text-muted-foreground pl-3 break-words">
           {item.User?.firstname}:{" "}
-          <span className="text-foreground">{item.message}</span>
+          <span className="text-foreground capitalize tracking-tighter">
+            {item.message}
+          </span>
         </p>
       </div>
     </li>
@@ -95,7 +101,11 @@ async function GuestBookForm() {
 
   return (
     <div className="flex justify-between gap-4 flex-col md:flex-row">
-      <Input type="text" placeholder="Your Message..." />
+      <Input
+        type="text"
+        placeholder="Your Message..."
+        className="capitalize tracking-normal"
+      />
       <RegisterLink>
         <Button className="w-full">Sign for free</Button>
       </RegisterLink>

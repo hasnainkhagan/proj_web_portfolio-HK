@@ -22,10 +22,18 @@ export default async function ProjectsPage() {
   const data: ProjectsCard[] = await getData();
 
   return (
-    <section className="max-w-7xl w-full px-4 md:px-8 mx-auto">
-      <h1 className="text-4xl font-semibold lg:text-5xl pt-5">Projects</h1>
-      <p className="leading-7 text-muted-foreground mt-2">
-        Check out what projects I have created
+    <section className="max-w-7xl w-full px-4 md:px-8 mx-auto text-[#131313]">
+      <h1
+        className="text-4xl font-bold lg:text-5xl pt-5 uppercase"
+        align="center"
+      >
+        Projects
+      </h1>
+      <p
+        className="leading-7 text-muted-foreground mt-2 uppercase"
+        align="center"
+      >
+        check out the projects that I&apos;ve created
       </p>
       <div className="py-12 grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12 grid-cols-1">
         {data.map((item) => (
@@ -38,9 +46,9 @@ export default async function ProjectsPage() {
             <div className="aspect-w-16 aspect-h-12 overflow-hidden rounded-2xl relative">
               <Image
                 src={item.imageUrl}
-                alt="Image Description"
+                alt="IMG Description"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-2xl"
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-[2em] bg-gray-200"
               />
             </div>
             <div className="mt-4">

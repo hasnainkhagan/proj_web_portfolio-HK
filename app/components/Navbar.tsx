@@ -30,11 +30,11 @@ export const navigationItems = [
 export function Navbar() {
   const pathname = usePathname();
   return (
-    <nav className="max-w-7xl mx-auto px-4 md:px-8 py-5 grid grid-cols-12">
+    <nav className="max-w-7xl mx-auto px-4 md:px-8 py-5 grid grid-cols-12 backdrop-blur-md top-0 sticky z-50 uppercase">
       <div className="col-span-6 flex md:col-span-3">
         <Link href="/">
-          <h1 className="text-3xl font-semibold">
-            Jan <span className="text-blue-500">Marshal</span>
+          <h1 className="text-3xl font-extrabold tracking-tight">
+            HK<span className="text-green-500 text-4xl">.</span>
           </h1>
         </Link>
       </div>
@@ -60,7 +60,7 @@ export function Navbar() {
 
       <div className="flex items-center justify-end md:col-span-3 col-span-6">
         <Button className="hidden sm:flex" asChild>
-          <a href="mailto:jan@alenix.de">Contact Me</a>
+          <a href="mailto:freelevance@gmail.com">contact me</a>
         </Button>
         <div className="sm:hidden">
           <MobileMenu />

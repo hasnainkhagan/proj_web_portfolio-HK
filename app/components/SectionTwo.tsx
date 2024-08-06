@@ -32,19 +32,19 @@ const icons = [
   sketch,
   canva,
   ai,
+  pr,
+  ps,
   figma,
   chatgpt,
-  cloud,
+  micro,
   framer,
   github,
   slack,
+  notion,
+  cloud,
   discord,
   youtube,
   chrome,
-  pr,
-  ps,
-  notion,
-  micro,
 ];
 
 const socialMedia = [
@@ -52,44 +52,51 @@ const socialMedia = [
     id: 1,
     icon: insta,
     name: "Instagram",
-    username: "@jan",
-    link: "http://localhost:3000/",
+    username: "@hasainkhagan",
+    link: "https://instagram.com/hasnainkhagan",
   },
   {
     id: 2,
     icon: twitter,
     name: "X / Twitter",
-    username: "@jan",
-    link: "http://localhost:3000/",
+    username: "@hasainkhagan",
+    link: "https://twitter.com/hasnainkhagan",
   },
   {
     id: 3,
     icon: linkedin,
     name: "Linkedin",
-    username: "@jan",
-    link: "http://localhost:3000/",
+    username: "/hasainkhagan",
+    link: "https://www.linkedin.com/in/hasnainkhagan/",
   },
 ];
 
 export function SectionTwo() {
   return (
-    <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-10">
+    <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-10 cursor-default">
       <div className="w-full relative col-span-1">
         <Image
           src={square}
           alt="square"
-          className="w-full h-full object-cover rounded-2xl"
+          className="w-full h-full object-cover rounded-[2em]"
         />
       </div>
       <div className="flex flex-col w-full col-span-1 lg:col-span-2 gap-4">
-        <Card className="bg-gray-100 border-none">
-          <CardHeader>
-            <CardTitle>Explore my stack</CardTitle>
+        <Card className="bg-gray-100 border-none rounded-[2em]">
+          <CardHeader className="uppercase text-[#131313]">
+            <CardTitle className="font-bold tracking-[-.1em]">
+              explore my stack arsenal
+            </CardTitle>
             <CardDescription>Check out the tools i use daily</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-wrap gap-4">
             {icons.map((item, index) => (
-              <Image key={index} src={item} alt="Icon" className="w-16 h-16" />
+              <Image
+                key={index}
+                src={item}
+                alt="Icon"
+                className="w-16 h-16 rounded-[1.25em]"
+              />
             ))}
           </CardContent>
         </Card>
@@ -98,13 +105,19 @@ export function SectionTwo() {
           {socialMedia.map((item) => (
             <Card
               key={item.id}
-              className="p-4 flex flex-col items-center sm:items-start bg-gray-100 border-none"
+              className="p-4 flex flex-col items-center sm:items-start bg-gray-100 border-none rounded-[2em]"
             >
-              <Image src={item.icon} alt="Icon" className="w-16 h-16" />
+              <Image
+                src={item.icon}
+                alt="Icon"
+                className="w-16 h-16 rounded-[1.25em]"
+              />
               <h1 className="text-2xl font-medium pt-3">{item.name}</h1>
-              <p className="text-muted-foreground">{item.username}</p>
+              <p className="text-muted-foreground lowercase">{item.username}</p>
               <Button className="mt-4" size="sm" asChild>
-                <a href={item.link}>Follow</a>
+                <a href={item.link} className="uppercase tracking-tighter">
+                  Follow
+                </a>
               </Button>
             </Card>
           ))}

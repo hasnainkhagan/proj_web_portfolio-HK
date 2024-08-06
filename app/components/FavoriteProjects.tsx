@@ -31,12 +31,12 @@ export async function FavoriteProjects() {
           className="group block"
           target="_blank"
         >
-          <div className="aspect-w-16 aspect-h-12 overflow-hidden rounded-2xl relative">
+          <div className="aspect-w-16 aspect-h-12 overflow-hidden rounded-[2em] relative">
             <Image
               src={item.imageUrl}
-              alt="Image Description"
+              alt="IMG Description"
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-2xl"
+              className="object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-2xl bg-gray-200"
             />
           </div>
           <div className="mt-4">
