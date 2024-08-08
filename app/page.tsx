@@ -2,7 +2,7 @@ import { AboutSection } from "./components/AboutSection";
 import { FavoriteProjects } from "./components/FavoriteProjects";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
-import { SectionTwo } from "./components/SectionTwo";
+import { SectionTwo } from "./components/Section2";
 
 export default function Home() {
   return (
