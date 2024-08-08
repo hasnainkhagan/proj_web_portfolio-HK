@@ -25,13 +25,13 @@ export default async function ProjectsPage() {
     <section className="max-w-7xl w-full px-4 md:px-8 mx-auto text-[#131313]">
       <h1
         className="text-4xl font-bold lg:text-5xl pt-5 uppercase"
-        align="center"
+        
       >
         Projects
       </h1>
       <p
         className="leading-7 text-muted-foreground mt-2 uppercase"
-        align="center"
+        
       >
         check out the projects that I&apos;ve created
       </p>
