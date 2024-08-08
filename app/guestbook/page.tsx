@@ -39,10 +39,10 @@ async function getGuestBookEntry() {
 export default function GuestbookPage() {
   return (
     <section className="max-w-7xl w-full px-4 md:px-8 mx-auto uppercase">
-      <h1 className="text-4xl font-bold lg:text-5xl pt-5" align="center">
+      <h1 className="text-4xl font-bold lg:text-5xl pt-5">
         Guestbook
       </h1>
-      <p className="leading-7 text-muted-foreground mt-2" align="center">
+      <p className="leading-7 text-muted-foreground mt-2">
         Sign my Guestbook !
       </p>
 
